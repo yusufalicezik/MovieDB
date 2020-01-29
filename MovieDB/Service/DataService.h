@@ -7,12 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Movie.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DataService : NSObject{
 }
 -(void)getDataFromService: (NSString *)url handler:(void(^) (NSMutableArray *result))callback;
+-(void)getMovieDetail: (NSInteger *)movieId handler:(void(^) (Movie *movie))callback;
 
 @end
 

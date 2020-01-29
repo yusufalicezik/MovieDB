@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *movieDescLabel;
 @property (weak, nonatomic) IBOutlet MBCircularProgressBarView *rateProgres;
 
+
 @end
 
 NS_ASSUME_NONNULL_END

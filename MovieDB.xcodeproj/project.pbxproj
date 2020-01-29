@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		482CFF8523E1CF7C0020A0DF /* DetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 482CFF8423E1CF7C0020A0DF /* DetailVC.m */; };
+		482CFF8923E1FF710020A0DF /* GenreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 482CFF8823E1FF710020A0DF /* GenreCell.m */; };
 		48CE4A0123E0D2C30056B941 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CE4A0023E0D2C30056B941 /* AppDelegate.m */; };
 		48CE4A0423E0D2C30056B941 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CE4A0323E0D2C30056B941 /* SceneDelegate.m */; };
 		48CE4A0723E0D2C30056B941 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CE4A0623E0D2C30056B941 /* ViewController.m */; };
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		482CFF8323E1CF7C0020A0DF /* DetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailVC.h; sourceTree = "<group>"; };
 		482CFF8423E1CF7C0020A0DF /* DetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailVC.m; sourceTree = "<group>"; };
+		482CFF8723E1FF710020A0DF /* GenreCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GenreCell.h; sourceTree = "<group>"; };
+		482CFF8823E1FF710020A0DF /* GenreCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenreCell.m; sourceTree = "<group>"; };
 		48CE49FC23E0D2C30056B941 /* MovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48CE49FF23E0D2C30056B941 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		48CE4A0023E0D2C30056B941 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -61,6 +64,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		482CFF8623E1FF560020A0DF /* GenreCell */ = {
+			isa = PBXGroup;
+			children = (
+				482CFF8723E1FF710020A0DF /* GenreCell.h */,
+				482CFF8823E1FF710020A0DF /* GenreCell.m */,
+			);
+			path = GenreCell;
+			sourceTree = "<group>";
+		};
 		48CE49F323E0D2C30056B941 = {
 			isa = PBXGroup;
 			children = (
@@ -104,7 +116,8 @@
 		48CE4A1923E0D2D00056B941 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				48D8F30D23E0DE0700013609 /* Cell */,
+				482CFF8623E1FF560020A0DF /* GenreCell */,
+				48D8F30D23E0DE0700013609 /* MovieCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -135,14 +148,14 @@
 			path = SupportFiles;
 			sourceTree = "<group>";
 		};
-		48D8F30D23E0DE0700013609 /* Cell */ = {
+		48D8F30D23E0DE0700013609 /* MovieCell */ = {
 			isa = PBXGroup;
 			children = (
 				48D8F30E23E0DE2300013609 /* MovieCell.h */,
 				48D8F30F23E0DE2400013609 /* MovieCell.m */,
 				48D8F31023E0DE2400013609 /* MovieCell.xib */,
 			);
-			path = Cell;
+			path = MovieCell;
 			sourceTree = "<group>";
 		};
 		48D8F31323E0E4A500013609 /* Service */ = {
@@ -168,7 +181,6 @@
 				57CF982294C76811105DB6ED /* Pods-MovieDB.debug.xcconfig */,
 				C8C00091A48F85B757545AD1 /* Pods-MovieDB.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -293,6 +305,7 @@
 				48D8F31123E0DE2400013609 /* MovieCell.m in Sources */,
 				48CE4A0123E0D2C30056B941 /* AppDelegate.m in Sources */,
 				48D8F31B23E0E5A800013609 /* DataService.m in Sources */,
+				482CFF8923E1FF710020A0DF /* GenreCell.m in Sources */,
 				48CE4A1223E0D2C60056B941 /* main.m in Sources */,
 				48CE4A0423E0D2C30056B941 /* SceneDelegate.m in Sources */,
 			);

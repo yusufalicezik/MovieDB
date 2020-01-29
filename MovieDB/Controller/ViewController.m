@@ -10,6 +10,7 @@
 #import "MovieCell.h"
 #import "DataService.h"
 #import "Movie.h"
+#import "DetailVC.h"
 
 @interface ViewController ()
 
@@ -19,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupView];
+    //[self setupView];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerNib:[UINib nibWithNibName:@"MovieCell" bundle:nil] forCellReuseIdentifier:@"cell"];
@@ -34,6 +35,12 @@
     [[UITextField appearanceWhenContainedIn:[UISearchBar class], nil] setTextColor:[UIColor whiteColor]];
     self.navigationItem.titleView = searchBar;
     [[UISegmentedControl appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]} forState:UIControlStateNormal];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden = false;
+    [self setupView];
 }
 
 
@@ -87,6 +94,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.tableView deselectRowAtIndexPath:indexPath animated:false];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    DetailVC *detailVC = (DetailVC *)[storyboard instantiateViewControllerWithIdentifier:@"DetailVC"];
+    detailVC.movieId = [dataList[indexPath.row] movieId];
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 @end
