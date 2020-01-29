@@ -11,9 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DataService : NSObject{
-    @public int sayi;
 }
--(void)getDataFromService:(void(^) (NSMutableArray *result))callback;
+-(void)getDataFromService: (NSString *)url handler:(void(^) (NSMutableArray *result))callback;
 
 @end
 

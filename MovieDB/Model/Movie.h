@@ -11,10 +11,10 @@
 
 @interface Movie: NSObject
 
-@property (strong, nonatomic) NSString *title;
-@property (strong, nonatomic) NSString *posterPath;
+@property (strong, nonatomic) NSString *movieTitle;
 @property (strong, nonatomic) NSString *overview;
-@property (strong, nonatomic) NSString *date;
+@property (strong, nonatomic) NSString *releaseDate;
+@property (strong, readwrite) NSString *photoUrl;
 
 @end
 

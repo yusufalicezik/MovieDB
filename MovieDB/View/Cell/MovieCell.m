@@ -12,7 +12,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.movieImageView.layer.cornerRadius = 10;
+    self.movieImageView.layer.cornerRadius = 8;
     // Initialization code
 }
 

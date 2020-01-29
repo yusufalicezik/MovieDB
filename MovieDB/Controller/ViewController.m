@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "MovieCell.h"
 #import "DataService.h"
+#import "Movie.h"
 
 @interface ViewController ()
 
@@ -37,19 +38,42 @@
 
 
 - (IBAction)segmentChanged:(id)sender {
-    DataService *service = [[DataService alloc] init];
-    [service getDataFromService:^(NSMutableArray * _Nonnull result) {
-        NSLog(@"res : %@", [result[0] title]);
+    [self fetchData:self.typeSegment.selectedSegmentIndex];
+}
+
+- (void)fetchData:(NSInteger)type{
+    NSString *apiUrl;
+    if(type == 0){
+        apiUrl = @"https://api.themoviedb.org/3/discover/movie?api_key=ae32fbb3535e8e640aff557640da5021&language=en-US";
+    }else{
+        apiUrl = @"https://api.themoviedb.org/3/movie/top_rated?api_key=ae32fbb3535e8e640aff557640da5021";
+    }
+  DataService *service = [[DataService alloc] init];
+    [service getDataFromService:apiUrl handler:^(NSMutableArray * _Nonnull result) {
+        self->dataList = result;
+        [self.tableView reloadData];
     }];
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    cell.movieNameLabel.text = [dataList[indexPath.row] movieTitle];
+    cell.movieDescLabel.text = [dataList[indexPath.row] overview];
+    cell.movieDateLabel.text = [dataList[indexPath.row] releaseDate];
+    dispatch_async(dispatch_get_global_queue(0,0), ^{
+        NSString * allUrl = [NSString stringWithFormat:@"%@%@", @"https://image.tmdb.org/t/p/w500", [self->dataList[indexPath.row] photoUrl]];
+        NSLog(@"YCC-> %@", allUrl);
+        NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: allUrl]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            cell.movieImageView.image = [UIImage imageWithData:imageData];
+        });
+    });
+    
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self->dataList.count;
 }
 
 
