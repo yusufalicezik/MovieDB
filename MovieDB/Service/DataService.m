@@ -21,7 +21,9 @@
             NSArray *movieResults = [json objectForKey:@"results"];
             for(NSDictionary *movieDict in movieResults){
                 Movie *movie = Movie.new;
+                movie.movieId = [movieDict[@"id"] intValue];
                 movie.overview = movieDict[@"overview"];
+                movie.vote_average = [movieDict[@"vote_average"] doubleValue];
                 movie.movieTitle = movieDict[@"title"];
                 movie.photoUrl = movieDict[@"poster_path"];
                 movie.releaseDate = movieDict[@"release_date"];

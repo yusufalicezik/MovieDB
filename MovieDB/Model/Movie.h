@@ -9,12 +9,17 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Movie: NSObject
+@interface Movie: NSObject {
+    
+}
 
 @property (strong, nonatomic) NSString *movieTitle;
 @property (strong, nonatomic) NSString *overview;
 @property (strong, nonatomic) NSString *releaseDate;
 @property (strong, readwrite) NSString *photoUrl;
+@property (nonatomic, assign) int movieId;
+@property (nonatomic, assign) double vote_average;
+
 
 @end
 

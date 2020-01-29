@@ -23,7 +23,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerNib:[UINib nibWithNibName:@"MovieCell" bundle:nil] forCellReuseIdentifier:@"cell"];
-    // Do any additional setup after loading the view.
+    [self fetchData:0]; //first discover
 }
 
 -(void)setupView{
@@ -59,7 +59,16 @@
     MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     cell.movieNameLabel.text = [dataList[indexPath.row] movieTitle];
     cell.movieDescLabel.text = [dataList[indexPath.row] overview];
-    cell.movieDateLabel.text = [dataList[indexPath.row] releaseDate];
+    cell.rateProgres.value = [dataList[indexPath.row] vote_average] * 10;
+    cell.rateProgres.unitString = @"%";
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd"];
+    NSDate *date = [dateFormat dateFromString:[dataList[indexPath.row] releaseDate]];
+    [dateFormat setTimeZone:[NSTimeZone systemTimeZone]];
+    [dateFormat setDateFormat:@"EEEE, MMMM yyyy"];
+    NSString *finalDate = [dateFormat stringFromDate:date];
+    cell.movieDateLabel.text = finalDate;
+    
     dispatch_async(dispatch_get_global_queue(0,0), ^{
         NSString * allUrl = [NSString stringWithFormat:@"%@%@", @"https://image.tmdb.org/t/p/w500", [self->dataList[indexPath.row] photoUrl]];
         NSLog(@"YCC-> %@", allUrl);
@@ -76,5 +85,8 @@
     return self->dataList.count;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.tableView deselectRowAtIndexPath:indexPath animated:false];
+}
 
 @end

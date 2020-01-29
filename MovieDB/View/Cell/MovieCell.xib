@@ -33,14 +33,14 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31.12.1997" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UiV-pY-lcz">
-                        <rect key="frame" x="118" y="38" width="252" height="11"/>
+                        <rect key="frame" x="153" y="38" width="217" height="21"/>
                         <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="11"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooY-1B-fLY">
-                        <rect key="frame" x="118" y="57" width="237" height="12"/>
-                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="12"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="244" verticalCompressionResistancePriority="758" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooY-1B-fLY">
+                        <rect key="frame" x="118" y="67" width="237" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -52,6 +52,70 @@
                         </constraints>
                         <state key="normal" image="icons8-back-30-2"/>
                     </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tle-Zb-O66" customClass="MBCircularProgressBarView">
+                        <rect key="frame" x="118" y="32" width="30" height="30"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="QAv-Sj-nHy"/>
+                            <constraint firstAttribute="height" constant="30" id="mgC-F1-nEw"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="emptyLineColor">
+                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
+                                <color key="value" red="0.80644112830000003" green="0.67266416549999997" blue="0.27110958099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="progressStrokeColor">
+                                <color key="value" red="0.80644112830000003" green="0.67266416549999997" blue="0.27110958099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="progressAngle">
+                                <real key="value" value="100"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="progressRotationAngle">
+                                <real key="value" value="45"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="progressLineWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                <real key="value" value="70"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                <real key="value" value="100"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="decimalPlaces">
+                                <integer key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="emptyLineStrokeColor">
+                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="valueFontSize">
+                                <real key="value" value="12"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="unitFontSize">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="progressCapType">
+                                <integer key="value" value="0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="emptyLineWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="emptyCapType">
+                                <integer key="value" value="0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="showValueString" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="showUnitString" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="valueDecimalFontSize">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="string" keyPath="unitFontName" value="Arial"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
@@ -59,14 +123,17 @@
                     <constraint firstItem="8mO-Mw-iXv" firstAttribute="centerY" secondItem="Jlf-Ya-sDR" secondAttribute="centerY" id="A4h-3n-eOo"/>
                     <constraint firstItem="Jlf-Ya-sDR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="BnV-Jq-Ds9"/>
                     <constraint firstItem="Dhl-WA-2lT" firstAttribute="leading" secondItem="Jlf-Ya-sDR" secondAttribute="trailing" constant="8" id="FhJ-Vw-6Qn"/>
+                    <constraint firstItem="ooY-1B-fLY" firstAttribute="top" secondItem="Tle-Zb-O66" secondAttribute="bottom" constant="5" id="InI-MX-doh"/>
+                    <constraint firstItem="UiV-pY-lcz" firstAttribute="leading" secondItem="Tle-Zb-O66" secondAttribute="trailing" constant="5" id="JQL-Cv-Wb2"/>
                     <constraint firstAttribute="trailing" secondItem="8mO-Mw-iXv" secondAttribute="trailing" constant="8" id="R2b-6P-udn"/>
                     <constraint firstAttribute="bottom" secondItem="Jlf-Ya-sDR" secondAttribute="bottom" constant="12" id="WOy-1x-hqf"/>
                     <constraint firstItem="Jlf-Ya-sDR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="enE-Bn-Qi0"/>
                     <constraint firstItem="ooY-1B-fLY" firstAttribute="leading" secondItem="Jlf-Ya-sDR" secondAttribute="trailing" constant="8" id="f2G-oC-2PM"/>
                     <constraint firstAttribute="trailing" secondItem="UiV-pY-lcz" secondAttribute="trailing" constant="25" id="fi7-wX-6iS"/>
-                    <constraint firstItem="UiV-pY-lcz" firstAttribute="leading" secondItem="Jlf-Ya-sDR" secondAttribute="trailing" constant="8" id="iUf-VR-Q7X"/>
+                    <constraint firstItem="Tle-Zb-O66" firstAttribute="leading" secondItem="Jlf-Ya-sDR" secondAttribute="trailing" constant="8" id="gHR-h9-1ON"/>
                     <constraint firstAttribute="trailing" secondItem="ooY-1B-fLY" secondAttribute="trailing" constant="40" id="kJd-o1-ZDk"/>
                     <constraint firstItem="Dhl-WA-2lT" firstAttribute="top" secondItem="Jlf-Ya-sDR" secondAttribute="top" id="snu-4a-cCJ"/>
+                    <constraint firstItem="Tle-Zb-O66" firstAttribute="top" secondItem="Dhl-WA-2lT" secondAttribute="bottom" constant="2" id="teu-dG-Lo1"/>
                     <constraint firstAttribute="trailing" secondItem="Dhl-WA-2lT" secondAttribute="trailing" constant="8" id="wfD-vl-PpG"/>
                     <constraint firstItem="UiV-pY-lcz" firstAttribute="top" secondItem="Dhl-WA-2lT" secondAttribute="bottom" constant="8" id="x7W-5H-5Nn"/>
                 </constraints>
@@ -77,6 +144,7 @@
                 <outlet property="movieDescLabel" destination="ooY-1B-fLY" id="TvF-yB-Nyf"/>
                 <outlet property="movieImageView" destination="Jlf-Ya-sDR" id="C5D-bE-qQe"/>
                 <outlet property="movieNameLabel" destination="Dhl-WA-2lT" id="KNL-Dr-HBI"/>
+                <outlet property="rateProgres" destination="Tle-Zb-O66" id="gXO-AH-nsj"/>
             </connections>
             <point key="canvasLocation" x="80.434782608695656" y="103.125"/>
         </tableViewCell>
